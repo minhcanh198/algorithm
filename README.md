@@ -1,4 +1,4 @@
-# QUOTE SERVICE
+# My brain of algorithm
 
 ## Build Setup
 
