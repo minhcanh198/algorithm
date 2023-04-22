@@ -1,0 +1,13 @@
+version: "3.8"
+
+services:
+  golang-quote:
+    container_name: algorithm
+    build:
+      context: .
+      dockerfile: .dev.Dockerfile
+    ports:
+      - '8000:8000'
+    volumes:
+      - ./:/usr/app
+    command: air
