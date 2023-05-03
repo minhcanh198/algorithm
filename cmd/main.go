@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	sliding_window "git.cps.onl/cps/quote/src/sliding-window"
 	"git.cps.onl/cps/quote/src/sorts"
 	"log"
@@ -11,5 +12,7 @@ func main() {
 	log.Println(arr)
 	sorts.InterchangeSort(arr)
 	log.Println(arr)
-	log.Println(sliding_window.LengthOfLongestSubstring("dvdf"))
+	inputStr := "abcaa"
+	fmt.Println(inputStr)
+	log.Println(sliding_window.LengthOfLongestSubstring(inputStr))
 }

@@ -1,23 +1,28 @@
 package sliding_window
 
-import (
-	"log"
-	"math"
-)
-
 func LengthOfLongestSubstring(s string) int {
-	log.Println("input string: ", s)
 	maxLength := 0
-	seen := make(map[string]int)
-	for i := 0; i < len(s); i++ {
-		_, ok := seen[string(s[i])]
-		if !ok {
-			seen[string(s[i])] = i
-			maxLength = int(math.Max(float64(len(seen)), float64(maxLength)))
+	start := 0
+	end := 0
+	charSet := make(map[byte]bool)
+
+	for end < len(s) {
+		if !charSet[s[end]] {
+			charSet[s[end]] = true
+			end++
+			maxLength = max(maxLength, end-start)
 		} else {
-			seen = make(map[string]int)
-			seen[string(s[i])] = i
+			delete(charSet, s[start])
+			start++
 		}
 	}
+
 	return maxLength
+}
+
+func max(a, b int) int {
+	if a > b {
+		return a
+	}
+	return b
 }
