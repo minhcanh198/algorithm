@@ -12,7 +12,11 @@ func main() {
 	log.Println(arr)
 	sorts.InterchangeSort(arr)
 	log.Println(arr)
-	inputStr := "abcaa"
+	inputStr := "minhcanh"
 	fmt.Println(inputStr)
 	log.Println(sliding_window.LengthOfLongestSubstring(inputStr))
+
+	log.Println("sliding_window.MinSubArrayLen:", sliding_window.MinSubArrayLen(7, []int{2,3,1,2,4,3}))
+	log.Println("sliding_window.MinSubArrayLen:", sliding_window.MinSubArrayLen(4, []int{1,4,4}))
+	log.Println("sliding_window.MinSubArrayLen:", sliding_window.MinSubArrayLen(11, []int{1,1,1,1,1,1,1,1}))
 }
