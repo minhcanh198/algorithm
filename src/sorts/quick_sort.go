@@ -6,22 +6,17 @@ func QuickSort(arr []int, l int, r int) {
 	}
 
 	pivot := r
-
-	pivotValue := arr[pivot]
 	runIdx := l
-	rememberIdx := runIdx
-
+	newPivot := runIdx
 	for runIdx < r {
-		if arr[runIdx] < pivotValue {
-			swap(arr, rememberIdx, runIdx)
-			rememberIdx++
+		if arr[runIdx] < arr[pivot] {
+			swap(arr, newPivot, runIdx)
+			newPivot++
 		}
-
 		runIdx++
 	}
-	swap(arr, rememberIdx, pivot)
-	pivot = rememberIdx
 
-	QuickSort(arr, l, pivot-1)
-	QuickSort(arr, pivot+1, r)
+	swap(arr, newPivot, pivot)
+	QuickSort(arr, l, newPivot-1)
+	QuickSort(arr, newPivot + 1, r)
 }
