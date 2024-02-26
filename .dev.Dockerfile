@@ -1,4 +1,4 @@
-FROM golang:1.18-buster
+FROM golang:1.20-buster
 
 WORKDIR /usr/app
 RUN go install github.com/cosmtrek/air@latest

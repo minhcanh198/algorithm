@@ -2,21 +2,14 @@ package main
 
 import (
 	"fmt"
-	sliding_window "git.cps.onl/cps/quote/src/sliding-window"
-	"git.cps.onl/cps/quote/src/sorts"
-	"log"
+	"github.com/minhcanh198/algorithm/src/sorts"
 )
 
 func main() {
-	arr := []int{1, 6, 3, 623, 34, 5, 2, 345, 2342}
-	log.Println(arr)
-	sorts.InterchangeSort(arr)
-	log.Println(arr)
-	inputStr := "minhcanh"
-	fmt.Println(inputStr)
-	log.Println(sliding_window.LengthOfLongestSubstring(inputStr))
+	fmt.Println("mica course")
 
-	log.Println("sliding_window.MinSubArrayLen:", sliding_window.MinSubArrayLen(7, []int{2,3,1,2,4,3}))
-	log.Println("sliding_window.MinSubArrayLen:", sliding_window.MinSubArrayLen(4, []int{1,4,4}))
-	log.Println("sliding_window.MinSubArrayLen:", sliding_window.MinSubArrayLen(11, []int{1,1,1,1,1,1,1,1}))
+	arr := []int{2,4,5,10,10,21,1,2,12}
+
+	sorts.QuickSort(arr, 0, len(arr)-1)
+	fmt.Println("res", arr)
 }
