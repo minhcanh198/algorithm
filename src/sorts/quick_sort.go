@@ -48,34 +48,34 @@ func QuickSortPivotLeft(arr []int, l int, r int) {
 
 func QuickSortPivotCenter(arr []int, l int, r int) {
 	fmt.Println("input", arr)
-	if l >= r {
+	if l > r {
 		return
 	}
 
-	pivot := (l + r) / 2
-	left := 0
+	pivot := arr[(r + l) / 2]
+	fmt.Println("pivot", pivot)
+	left := l
 	right := r
-	for left < right {
-		if arr[left] >= arr[pivot] && arr[right] < arr[pivot] {
-			swap(arr, left, right)
-			left++
-			right--
-			continue
-		}
 
-		if arr[left] <= arr[pivot] {
+	for left <= right {
+		for arr[left] < pivot {
 			left++
 		}
 
-		if arr[right] > arr[pivot] {
+		for arr[right] > pivot {
 			right--
 		}
 
-		fmt.Println("after looop", arr)
+		if left <= right {
+			arr[left], arr[right] = arr[right], arr[left]
+			left++
+			right--
+		}
+
+		fmt.Println("after first looop", arr, left, right)
+
 	}
 
-	fmt.Println("=========== after looop", arr)
-
-	//QuickSortPivotCenter(arr, l, newPivot-1)
-	//QuickSortPivotCenter(arr, newPivot+1, r)
+	QuickSortPivotCenter(arr, l, right)
+	QuickSortPivotCenter(arr, left, r)
 }
