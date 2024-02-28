@@ -57,6 +57,7 @@ func QuickSortPivotCenter(arr []int, l int, r int) {
 	left := l
 	right := r
 
+
 	for left <= right {
 		for arr[left] < pivot {
 			left++
