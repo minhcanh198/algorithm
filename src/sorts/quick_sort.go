@@ -57,7 +57,7 @@ func QuickSortPivotCenter(arr []int, l int, r int) {
 	pivot := (l + r) / 2
 
 	for i <= j {
-		for arr[i] <= arr[pivot] {
+		for arr[i] < arr[pivot] {
 			i++
 		}
 
@@ -72,6 +72,9 @@ func QuickSortPivotCenter(arr []int, l int, r int) {
 		}
 	}
 
-	QuickSortPivotCenter(arr, l, i)
-	QuickSortPivotCenter(arr, j, r)
+	fmt.Println(i,j)
+
+	fmt.Println("after first loop", arr)
+	QuickSortPivotCenter(arr, l, j)
+	QuickSortPivotCenter(arr, i, r)
 }
