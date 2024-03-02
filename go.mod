@@ -1,3 +1,3 @@
 module github.com/minhcanh198/algorithm
 
-go 1.17
+go 1.20

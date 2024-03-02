@@ -2,14 +2,13 @@ package main
 
 import (
 	"fmt"
-	"github.com/minhcanh198/algorithm/src/sorts"
+	"github.com/minhcanh198/algorithm/src/leet-code/array"
 )
 
 func main() {
-	fmt.Println("mica course ==>>>>>>>>>>>>>>>>>>>>")
+	fmt.Println("mica course dau xanh ==>>>>>>>>>>>>>>>>>>>>")
 
-	arr := []int{1, 12, 5, 26, 7, 14, 3, 7, 2}
-
-	sorts.QuickSortPivotCenter(arr, 0, len(arr)-1)
-	fmt.Println("res", arr)
+	arr1 := []int{1, 2, 3, 0, 0, 0}
+	arr2 := []int{2, 5, 6}
+	array.Merge(arr1, 3, arr2, 3)
 }
