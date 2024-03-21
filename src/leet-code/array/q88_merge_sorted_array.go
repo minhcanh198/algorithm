@@ -22,5 +22,33 @@ package array
 //Note that because m = 0, there are no elements in nums1. The 0 is only there to ensure the merge result can fit in nums1.
 
 func Merge(nums1 []int, m int, nums2 []int, n int) {
+	leftArr := nums1[:m]
+	i := 0
+	j := 0
 
+	mergedArr := []int{}
+	for i < m && j < n {
+		if leftArr[i] < nums2[j] {
+			mergedArr = append(mergedArr, leftArr[i])
+			i++
+		} else {
+			mergedArr = append(mergedArr, nums2[j])
+			j++
+		}
+	}
+
+	for j < n {
+		mergedArr = append(mergedArr, nums2[j])
+		j++
+	}
+	for i < m {
+		mergedArr = append(mergedArr, leftArr[i])
+		i++
+	}
+
+	k := 0
+	for k < m+n {
+		nums1[k] = mergedArr[k]
+		k++
+	}
 }
