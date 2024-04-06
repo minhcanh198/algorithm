@@ -1,24 +1,43 @@
 package two_pointers
 
-import "fmt"
+import (
+	"fmt"
+	"sort"
+)
 
-//https://leetcode.com/problems/3sum/?envType=study-plan-v2&envId=top-interview-150
+// https://leetcode.com/problems/3sum/?envType=study-plan-v2&envId=top-interview-150
 func ThreeSum(nums []int) [][]int {
 	fmt.Println(nums)
 	var res [][]int
-	for i := 0; i < len(nums); i++ {
-		dict := make(map[int]int)
-		target := nums[i]
-		for j := 0; j < len(nums); j++ {
-			if j == i {
+	sort.Ints(nums)
+	for i := 0; i < len(nums)-2; i++ {
+		if i > 0 && nums[i] == nums[i-1] {
+			continue
+		}
+
+		l := i + 1
+		r := len(nums) - 1
+		for l < r {
+			if l == i {
+				l++
 				continue
 			}
-			shouldFound, ok := dict[-target-nums[j]]
-			fmt.Println("should found", shouldFound, ok)
-			if ok {
-				res = append(res, []int{i, j, shouldFound})
+			if r == i {
+				r--
+				continue
+			}
+			sum := nums[i] + nums[l] + nums[r]
+			if sum < 0 {
+				l++
+			} else if sum > 0 {
+				r--
 			} else {
-				dict[nums[j]] = j
+				res = append(res, []int{nums[i], nums[l], nums[r]})
+				l++
+				for l < r && nums[l] == nums[l-1] {
+					l++
+				}
+				r--
 			}
 		}
 	}

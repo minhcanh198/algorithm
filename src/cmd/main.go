@@ -5,5 +5,6 @@ import (
 )
 
 func main() {
-	two_pointers.ThreeSum([]int{-1, 0, 1, 2, -1, -4})
+	height := []int{1, 8, 6, 2, 5, 4, 8, 3, 7}
+	two_pointers.MaxArea(height)
 }
