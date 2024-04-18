@@ -1,7 +1,9 @@
 package main
 
-import sliding_window "github.com/minhcanh198/algorithm/sliding-window"
+import (
+	"github.com/minhcanh198/algorithm/array"
+)
 
 func main() {
-	sliding_window.LengthOfLongestSubstring("pwwkew")
+	array.FullJustify([]string{"so", "fine", "That", "all", "the", "world"}, 25)
 }
