@@ -1,9 +1,7 @@
 package main
 
-import (
-	"github.com/minhcanh198/algorithm/array"
-)
+import "github.com/minhcanh198/algorithm/array"
 
 func main() {
-	array.FullJustify([]string{"so", "fine", "That", "all", "the", "world"}, 25)
+	array.MaxProfitII([]int{2, 1, 2, 0, 1})
 }
