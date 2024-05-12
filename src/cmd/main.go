@@ -1,7 +1,12 @@
 package main
 
-import "github.com/minhcanh198/algorithm/array"
+import (
+	"fmt"
+	"github.com/minhcanh198/algorithm/stack"
+)
 
 func main() {
-	array.MaxProfitII([]int{2, 1, 2, 0, 1})
+	fmt.Println("dauxanh")
+	stack.BasicCalculate("(1+(4+5+2)-3)+(6+8)")
+	//stack.BasicCalculate("1-1")
 }
