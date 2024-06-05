@@ -1,8 +1,7 @@
 package main
 
-import "github.com/minhcanh198/algorithm/array"
+import "github.com/minhcanh198/algorithm/dynamic_program"
 
 func main() {
-	//dynamic_program.Rob([]int{1, 2, 3, 1})
-	array.ReverseString([]byte{'h', 'e', 'l', 'l', 'o'})
+	dynamic_program.LengthOfLIS([]int{4, 10, 4, 3, 8, 9})
 }
