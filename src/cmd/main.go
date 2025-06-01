@@ -2,12 +2,13 @@ package main
 
 import (
 	"fmt"
-	"github.com/minhcanh198/algorithm/medium"
+	"github.com/minhcanh198/algorithm/hard"
 )
 
 func main() {
-	nums := []int{100, 4, 200, 1, 3, 2}
-	r := medium.LongestConsecutive(nums)
+	s := "aaflslflsldkalskaaa"
+	t := "aaa"
+	r := hard.MinWindow(s, t)
 
 	fmt.Println(r)
 }
